@@ -1,0 +1,55 @@
+<div *ngIf="!jobCreated" class="create-job-container">
+    <button class="back-button" (click)="goBack()">&#8592; Back</button>
+
+    <div>
+        <form class="job-form">
+            <h2>Create Job</h2>
+
+            <div class="form-group">
+                <label for="jobId">Job ID</label>
+                <input type="text" id="jobId" name="jobId" placeholder="Enter Job ID" required
+                    [(ngModel)]="localJob.id" />
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter Job Title" required
+                    [(ngModel)]="localJob.title" />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter Job Description" rows="4" required
+                    [(ngModel)]="localJob.description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="requirement">Requirement</label>
+                <textarea id="requirement" name="requirement" placeholder="Enter Job Requirements" rows="4" required
+                    [(ngModel)]="localJob.requirment"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" required [(ngModel)]="localJob.startDate" />
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" required [(ngModel)]="localJob.endDate" />
+            </div>
+
+            <button type="submit" class="submit-button" (click)="createJob();">Create Job</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="jobCreated">
+    <div class="success-message">
+        <div class="tick-mark">&#10004;</div>
+        <h2>Job Successfully Created!</h2>
+        <div class="action-buttons">
+            <button class="create-another-button" (click)="createAnotherJob()">Create Another Job</button>
+            <button class="dashboard-button" (click)="goToDashboard()">Return to Dashboard</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.create-job-container {
+    padding: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .job-form {
+        width: 100%;
+    }
+
+    .back-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.success-message {
+    padding-top: 15%;
+    text-align: center;
+    margin-top: 20px;
+}
+.tick-mark {
+    font-size: 50px;
+    color: green;
+}
+.action-buttons {
+    margin-top: 20px;
+}
+.create-another-button, .dashboard-button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

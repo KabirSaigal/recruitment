@@ -1,0 +1,60 @@
+<div class="login-container">
+    <div class="image-container">
+        <img src="assets/anayasmi.png" alt="Anayasmi" />
+    </div>
+
+    <div class="form-container">
+        <div class="form-content" *ngIf="showLogin">
+            <h2>Login</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" name="username" required [(ngModel)]="userlogin.email"/>
+                </div>
+                <div class="input-group password">
+                    <input [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password" name="password" required [(ngModel)]="userlogin.password"/>
+                        </div>
+                        <div class="login-options">
+                    <button class="showPassBtn" type="button" (click)="togglePasswordVisibility()">
+                        {{ isPasswordVisible ? 'Hide' : 'Show' }} Password
+                    </button>
+                    <div class="rememberMe">
+                        <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="userlogin.remember"/>
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                </div>
+                <button type="submit" class="login-button" (click)="login()">Login</button>
+            </form>
+            <div class="forgot-password">
+                <a (click)="forgotPassword()">Forgot Password?</a>
+            </div>
+            <p class="register-link">
+                Don't have an account? <a (click)="hideLogin()">Register</a>
+            </p>
+        </div>
+        <div class="form-content" *ngIf=showRegister>
+            <h2>Register</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" name="Name" required [(ngModel)]="userRegister.name" />
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" name="Username" required [(ngModel)]="userRegister.email"/>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" name="password" required [(ngModel)]="userRegister.password"/>
+                </div>
+                <div class="input-group">
+                    <label class="role"  for="role">Role</label>
+                    <select id="role" name="role" required [(ngModel)]="userRegister.role">
+                        <option value="candidate">Candidate</option>
+                        <option value="recruiter">Recruiter</option>
+                    </select>
+                </div>
+                <button type="submit" class="login-button" (click)="register()">Register</button>
+            </form>
+            <p class="register-link">
+                Already have an account? <a (click)="hideRegister()">Login</a>
+            </p>
+        </div>
+    </div>
+</div>

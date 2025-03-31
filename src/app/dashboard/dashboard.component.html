@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <div class="logo">
+            <h1>Recrucifix</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Jobs</a>
+            <a (click)="goToContact()">Contact</a>
+            <a (click)="goCreateJob()" *ngIf="isRecruit">Add a Job</a>
+            <a class="logout" (click)="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="stats-overview">
+            <div class="stat-card">
+                <h3>Total Jobs</h3>
+                <p>{{jobCount}}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Candidates</h3>
+                <p>{{candidateCount}}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Employers</h3>
+                <p>{{recruitCount}}</p>
+            </div>
+        </section>
+
+        <section class="job-listings" *ngIf="this.jobsExist">
+            <h2>Job Listings</h2>
+            <div class="job-card" *ngFor="let item of this.allActiveJobs">
+                <h3>{{item.title}}</h3>
+                <br>
+                <p>Description:</p>
+                <p>{{item.description}}</p>
+                <br>
+                <p>Requirment:</p>
+                <p>{{item.requirment}}</p>
+                <br>
+                <button>Apply Now</button>
+            </div>
+        </section>
+        <div class="emptyJobList" *ngIf="!this.jobsExist">
+        <h2 >No Jobs Currently Listed</h2>
+        <h3 *ngIf="isRecruit">Click <a (click)="goCreateJob()">here</a> to add a job.</h3>
+    </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 RecruitmentPro. All rights reserved.</p>
+        <p>Developed By Kabir Saigal</p>
+    </footer>
+</div>

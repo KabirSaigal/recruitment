@@ -1,0 +1,125 @@
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e40fd2;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.user-actions .btn-login,
+.user-actions .btn-signup {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: white;
+    color: #007bff;
+}
+
+.btn-signup {
+    background-color: #0056b3;
+    color: white;
+}
+
+.dashboard-main {
+    padding: 2rem;
+}
+
+.stats-overview {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-listings {
+    margin-top: 2rem;
+}
+
+.job-card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-card p{
+    padding: 3px;
+    text-align: justify;
+    text-wrap: wrap;
+}
+
+.job-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.job-card h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    margin-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.logout:hover {
+    cursor: pointer;
+}
+
+.emptyJobList{
+    align-items: center;
+    text-align: center;
+}
+
+.emptyJobList a{
+    color: #1551d3;
+
+    &:hover{
+        cursor: pointer;
+        color: #e10b0e;
+    }
+}
+
